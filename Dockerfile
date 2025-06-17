@@ -1,7 +1,7 @@
 # Use uma imagem base oficial do OpenJDK para Java e Maven
 # Escolha a versão do Java que seu projeto usa (ex: openjdk:17-jdk, openjdk:21-jdk)
 # Para este exemplo, vou usar a versão 21, mas ajuste se sua API usa outra.
-FROM openjdk:21-jdk-slim
+FROM openjdk:24-jdk-slim
 
 # Instala o Maven dentro do container
 # Isso garante que o comando 'mvn' estará disponível
