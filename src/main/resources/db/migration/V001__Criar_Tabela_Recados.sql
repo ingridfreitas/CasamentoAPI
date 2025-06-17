@@ -1,0 +1,6 @@
+CREATE TABLE recados (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    mensagem TEXT NOT NULL,
+    data VARCHAR(10) NOT NULL,
+);
