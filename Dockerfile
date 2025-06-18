@@ -1,22 +1,12 @@
-FROM openjdk:24-jdk-slim
-
-RUN apt-get update && \
-    apt-get install -y maven && \
-    rm -rf /var/lib/apt/lists/*
-
+# Etapa de build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
-
-COPY pom.xml .
-RUN mvn dependency:go-offline -B
-
 COPY . .
+RUN mvn clean package -DskipTests
 
-RUN mvn clean install -DskipTests
-
-# ADICIONE ESTA LINHA: Garante que o JAR é executável
-RUN chmod +x target/*.jar
-
+# Etapa de execução
+FROM eclipse-temurin:17
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Mude esta linha para a forma "exec" (lista de strings)
-CMD ["java", "-jar", "target/*.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
