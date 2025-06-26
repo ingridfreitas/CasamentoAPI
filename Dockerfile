@@ -1,14 +1,12 @@
+# Etapa 1: build da aplicação
 FROM maven:3.9.6-eclipse-temurin-24 AS build
-
-RUN apt-get update && apt-get install openjdk-24-jdk maven -y
-
+WORKDIR /app
 COPY . .
+RUN mvn clean package -DskipTests
 
-RUN mvn clean install
-
-FROM openjdk:24-jdk-slim
+# Etapa 2: imagem de execução
+FROM eclipse-temurin:24-jre
+WORKDIR /app
+COPY --from=build /app/target/CasamentoAPI-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
-
-COPY --from=build /target/CasamentoAPI-0.0.1-SNAPSHOT.jar /app/CasamentoAPI.jar
-
-ENTRYPOINT ["java", "-jar", "/app/CasamentoAPI.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
