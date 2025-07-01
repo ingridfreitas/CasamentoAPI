@@ -31,6 +31,7 @@ public class ConvidadosService {
         convidadoSalvo.setNome(convidados.getNome());
         convidadoSalvo.setData(convidados.getData());
         convidadoSalvo.setPresenca(convidados.getPresenca());
+        convidadoSalvo.setContato(convidados.getContato());
         return convidadosRepository.save(convidadoSalvo);
     }
 
@@ -63,6 +64,7 @@ public class ConvidadosService {
         convidadoSalvo.setNome(convidados.getNome());
         convidadoSalvo.setData(convidados.getData());
         convidadoSalvo.setPresenca(convidados.getPresenca());
+        convidadoSalvo.setContato(convidados.getContato());
         return convidadosRepository.save(convidadoSalvo);
     }
 }

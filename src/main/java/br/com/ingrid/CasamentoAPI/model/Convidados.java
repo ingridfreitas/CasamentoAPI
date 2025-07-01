@@ -15,6 +15,7 @@ public class Convidados {
     private String nome;
     private String presenca;
     private String data;
+    private String contato;
 
     /* Getter and Setter */
 
@@ -58,6 +59,14 @@ public class Convidados {
         this.data = data;
     }
 
+    public String getContato() {
+        return contato;
+    }
+
+    public void setContato(String contato) {
+        this.contato = contato;
+    }
+
     /* Equals and Hashcode */
 
     @Override
@@ -77,11 +86,12 @@ public class Convidados {
     public Convidados() {
     }
 
-    public Convidados(Integer id, String codigo, String presenca, String nome, String data) {
+    public Convidados(Integer id, String codigo, String presenca, String nome, String data, String contato) {
         this.id = id;
         this.codigo = codigo;
         this.presenca = presenca;
         this.nome = nome;
         this.data = data;
+        this.contato = contato;
     }
 }
