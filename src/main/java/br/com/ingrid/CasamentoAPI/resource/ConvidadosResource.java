@@ -50,6 +50,12 @@ public class ConvidadosResource {
         return new ResponseEntity<List<Convidados>>(convidadosRepository.findByCodigo(codigo), HttpStatus.OK);
     }
 
+    @CrossOrigin()
+    @GetMapping("/presenca")
+    public ResponseEntity<List<Convidados>> buscarPorPresenca(@RequestParam String presenca){
+        return new ResponseEntity<List<Convidados>>(convidadosRepository.findByPresenca(presenca), HttpStatus.OK);
+    }
+
     @CrossOrigin
     @PostMapping()
     public ResponseEntity<Convidados> criar(@RequestBody Convidados convidados, HttpServletResponse response){

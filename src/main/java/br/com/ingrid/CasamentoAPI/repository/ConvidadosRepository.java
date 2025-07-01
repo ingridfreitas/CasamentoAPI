@@ -10,4 +10,5 @@ import java.util.List;
 public interface ConvidadosRepository extends JpaRepository<Convidados, Integer> {
     List<Convidados> findByNome(String nome);
     List<Convidados> findByCodigo(String codigo);
+    List<Convidados> findByPresenca(String presenca);
 }

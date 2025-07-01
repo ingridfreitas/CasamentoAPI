@@ -13,7 +13,7 @@ public class Convidados {
 
     private String codigo;
     private String nome;
-    private Boolean presenca;
+    private String presenca;
     private String data;
 
     /* Getter and Setter */
@@ -42,11 +42,11 @@ public class Convidados {
         this.nome = nome;
     }
 
-    public Boolean getPresenca() {
+    public String getPresenca() {
         return presenca;
     }
 
-    public void setPresenca(Boolean presenca) {
+    public void setPresenca(String presenca) {
         this.presenca = presenca;
     }
 
@@ -77,7 +77,7 @@ public class Convidados {
     public Convidados() {
     }
 
-    public Convidados(Integer id, String codigo, Boolean presenca, String nome, String data) {
+    public Convidados(Integer id, String codigo, String presenca, String nome, String data) {
         this.id = id;
         this.codigo = codigo;
         this.presenca = presenca;
