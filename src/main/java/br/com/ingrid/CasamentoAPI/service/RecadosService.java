@@ -2,13 +2,11 @@ package br.com.ingrid.CasamentoAPI.service;
 
 import br.com.ingrid.CasamentoAPI.model.Recados;
 import br.com.ingrid.CasamentoAPI.repository.RecadosRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class RecadosService {
