@@ -57,7 +57,7 @@ public class ConvidadosResource {
     }
 
     @CrossOrigin()
-    @PostMapping()
+    @PostMapping(value = {"/add"})
     public ResponseEntity<Convidados> criar(@RequestBody Convidados convidados, HttpServletResponse response){
         Convidados convidadosSalvo = convidadosService.salvar(convidados);
         return ResponseEntity.status(HttpStatus.CREATED).body(convidadosSalvo);
