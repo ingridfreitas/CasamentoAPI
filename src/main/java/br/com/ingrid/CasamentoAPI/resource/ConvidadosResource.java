@@ -56,7 +56,7 @@ public class ConvidadosResource {
         return new ResponseEntity<List<Convidados>>(convidadosRepository.findByPresenca(presenca), HttpStatus.OK);
     }
 
-    @CrossOrigin
+    @CrossOrigin()
     @PostMapping()
     public ResponseEntity<Convidados> criar(@RequestBody Convidados convidados, HttpServletResponse response){
         Convidados convidadosSalvo = convidadosService.salvar(convidados);
