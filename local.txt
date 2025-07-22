@@ -1,11 +1,17 @@
 /* HOST PROPERTIES: */
 
-spring.datasource.url=jdbc:mysql://tramway.proxy.rlwy.net:31196/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Sao_Paulo
+spring.application.name=CasamentoAPI
+spring.jpa.database=MYSQL
+spring.datasource.url=jdbc:mysql://root:gxTaDIxyRupkAtGYnGyvhHEHZOlHPQig@metro.proxy.rlwy.net:44407/railway
 spring.datasource.username=root
-spring.datasource.password=VOWkgGYcSuyWMoXwTrvbxIgNUrzufpgh
+spring.datasource.password=gxTaDIxyRupkAtGYnGyvhHEHZOlHPQig
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.hibernate.ddl-auto=update
 spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 
 
